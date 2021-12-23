@@ -28,6 +28,7 @@ jobs:
   My_First_deploy:
   # Runs a single command using the runners shell
     runs-on: ubuntu-latest
+    needs: [My_First_test]
     steps:
       - name: Print Hello Massage
         run: echo "Hello World from my deploy"
