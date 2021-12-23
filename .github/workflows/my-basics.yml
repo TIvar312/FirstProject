@@ -1,6 +1,9 @@
 # This is a basic workflow to help you get started with Actions
 
 name: My-GitHubFirstproject
+env:
+  App_name  : "MyFlask"
+  Pack_name : "Flask deploy ver ${{ github.sha }}"
 
 # Controls when the workflow will run
 on:
@@ -24,6 +27,12 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Print Hello Message
         run : echo "Hello World from Testing job"
+      
+      - name: execute few commands
+        run : |
+          echo "Hello Message1"
+          echo "Hello Message2"
+          echo "Application name : ${{ env.App_name}}"|
 
   My_First_deploy:
   # Runs a single command using the runners shell
@@ -32,5 +41,8 @@ jobs:
     steps:
       - name: Print Hello Massage
         run: echo "Hello World from my deploy"
+        
+      - name: Printing deployment package
+        run : echo "deploy package name is ${{ env.Pack_name }}" 
 
       
