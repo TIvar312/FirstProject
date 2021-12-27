@@ -33,6 +33,8 @@ jobs:
           echo "Hello Message1"
           echo "Hello Message2"
           echo "Application name : ${{ env.App_name }}"
+      - name: List current folder
+        run : ls -la
 
   My_First_deploy:
   # Runs a single command using the runners shell
